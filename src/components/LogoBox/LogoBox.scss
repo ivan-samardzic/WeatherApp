@@ -1,0 +1,17 @@
+$orange : rgba(230, 140, 30, 1);
+$fakeGrey : rgba(125,125,125,0.75);
+.logo-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto 10px;
+    h3 {
+        color: $orange;
+        font-size: 24px;
+        margin: 0px auto;
+    }
+    h4 {
+        color: $fakeGrey;
+        font-size: 18px;
+    }
+}
