@@ -1,0 +1,23 @@
+$orange : rgba(230, 140, 30, 1);
+$fakeGrey : rgba(125,125,125,0.75);
+.form {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	position: relative;
+	input {
+		min-width: 240px;
+		margin: auto;
+		transition: all 0.1s ease-in-out;
+		&:hover {
+			border: 2px solid $orange;
+		}
+	}
+	i {
+		color: #888;
+		transition: all 0.3s ease-in-out;
+		&:hover {
+			color: $orange;
+		}
+	}
+}
