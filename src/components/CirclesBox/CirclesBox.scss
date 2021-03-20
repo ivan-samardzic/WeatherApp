@@ -1,0 +1,24 @@
+$circleRed : rgba(234, 62, 62, 1);
+$circleYellow : rgba(234, 199, 62, 1);
+$circleGreen : rgba(35, 161, 18, 1);
+.circles-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    .red, .yellow, .green {
+        border: 2px solid white;
+        border-radius: 50%;
+    }
+    .red {
+        color: $circleRed;
+        margin: auto 2px;
+    }
+    .yellow {
+        color: $circleYellow;
+        margin: auto 2px;
+    }
+    .green {
+        color: $circleGreen;
+        margin: auto 2px;
+    }
+}
