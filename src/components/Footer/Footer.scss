@@ -1,0 +1,9 @@
+.footer-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #ddd;
+    min-height: 20vh;
+    margin: 20px auto;
+}
