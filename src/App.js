@@ -4,7 +4,9 @@ import Footer from './components/Footer/Footer'
 
 const App = () => {
   return (
-    <div>
+    <div className='container-fluid'>
+      <Header />
+      <Footer />
     </div>
   );
 }
