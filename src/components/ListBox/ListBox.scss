@@ -1,0 +1,26 @@
+$orange : rgba(230, 140, 30, 1);
+$fakeGrey : rgba(125,125,125,0.75);
+.list-box {
+    width: 300px;
+    margin: 20px 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #141414;
+    border-radius: 20px;
+    min-height: 400px;
+    .list-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        margin: 10px auto;
+        width: 200px;
+        border: 2px solid $orange;
+        .city-name, .city-temp {
+            color: white;
+            font-weight: 600;
+            margin: 2px auto;
+        }
+    }
+}
