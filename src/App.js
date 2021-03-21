@@ -1,19 +1,22 @@
 import './App.scss';
-import React, { useState } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import Header from './components/Header/Header'
-import MainView from './components/MainView/MainView'
-import InitialView from './components/InitialView/InitialView'
 import Footer from './components/Footer/Footer'
+import WeatherContext from '../src/context/weatherContext'
+import axios from 'axios'
+import WeatherBox from './components/WeatherBox/WeatherBox';
 
 const App = () => {
-  const [loading, setLoading] = useState(false)
+  const context = useContext(WeatherContext)
+  const {cities, addCity, deleteCity} = context;
+  console.log(cities)
   return (
-    <div className='container-fluid'>
-      <Header />
-      {loading ? <InitialView /> : <MainView />}
-      <Footer />
-    </div>
-  );
+      <div className='container-fluid'>
+        <Header />
+        <WeatherBox  cities={cities} />
+        <Footer />
+      </div>
+  )
 }
 
 export default App;
