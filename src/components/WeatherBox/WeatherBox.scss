@@ -1,0 +1,8 @@
+$orange : rgba(230, 140, 30, 1);
+$fakeGrey : rgba(125,125,125,0.75);
+
+.weather-box {
+    display: flex;
+    flex-direction: row;
+    margin: 40px;
+}
