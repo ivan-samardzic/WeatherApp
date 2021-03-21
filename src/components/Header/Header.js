@@ -1,5 +1,5 @@
 import './Header.scss'
-import React from 'react'
+import React, {useState, useContext} from 'react'
 import HeaderLogo from '../HeaderLogo/HeaderLogo'
 import SearchBox from '../SearchBox/SearchBox'
 const Header = () => {
