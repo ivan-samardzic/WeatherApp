@@ -4,10 +4,17 @@ $fakeGrey : rgba(125,125,125,0.75);
 .city-box {
     display: flex;
     flex-direction: column;
-    margin: 20px 100px;
+    margin: 20px auto;
+    margin-right: 20px;
     padding: 15px;
     background-color: #252525;
     border-radius: 20px;
+    position: relative;
+    .favorite-box {
+        position: absolute;
+        top: 10%;
+        left: 45%;
+    }
     small {
         color: $orange;
     }

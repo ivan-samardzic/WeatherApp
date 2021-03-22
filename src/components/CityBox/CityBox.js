@@ -1,7 +1,12 @@
 import './CityBox.scss'
-import React from 'react'
+import React, {useState, useContext} from 'react'
+import AddFavorite from '../AddFavorite/AddFavorite'
+import WeatherContext from '../../context/weatherContext'
+import Spinner from '../Spinner/Spinner'
 
-const CityBox = ({cities}) => {
+const CityBox = () => {
+    const context = useContext(WeatherContext)
+    const {loading, city, addCity} = context;
     const image_base= 'https://www.bearvalley.com/wp-content/themes/bearvalley/library/images/weather/';
     const handleDirection = (direction) => {
         let stringDir = '';
@@ -34,39 +39,48 @@ const CityBox = ({cities}) => {
         return formattedTime;
     }
 
-    return (
+    if(loading) {
+        return <Spinner />
+    }
+    else {
+        return (
         <div className='city-box'>
+            <div className='favorite-box' onClick={() => addCity(city)}>
+                <AddFavorite  />
+            </div>
             <div className='first-row'>
                 <div className='left-corner'>
-                    <div className='city-name'>{cities[0].name}</div>
-                    <div className='city-temp'><small>Temp.</small> {Math.round(cities[0].main.temp)} <span>&deg;C</span></div>
+                    <div className='city-name'>{city.name}</div>
+                    <div className='city-temp'><small>Temp.</small> {Math.round(city.main.temp)} <span>&deg;C</span></div>
                 </div>
                 <div className='right-corner'>
-                    <img className="city-image" src={`${image_base}${cities[0].weather[0].icon}.svg`} alt='weather-image' />
-                    <div className='city-description'>{cities[0].weather[0].main}</div>
+                    <img className="city-image" src={`${image_base}${city.weather[0].icon}.svg`} alt='weather-image' />
+                    <div className='city-description'>{city.weather[0].main}</div>
                 </div>
             </div>
             <div className='second-row'>
                 <div className='city-temp-min-max'>
-                    <div className='min-temp'><small>Min</small> {Math.round(cities[0].main.temp_min)}<span>&deg;C</span></div>
-                    <div className='max-temp'><small>Max</small> {Math.round(cities[0].main.temp_max)}<span>&deg;C</span></div>
+                    <div className='min-temp'><small>Min</small> {Math.round(city.main.temp_min)}<span>&deg;C</span></div>
+                    <div className='max-temp'><small>Max</small> {Math.round(city.main.temp_max)}<span>&deg;C</span></div>
                 </div>
                 <div className='pressure-humidity-wind'>
-                    <div className='city-wind-description'><small>Wind</small> {Math.round(cities[0].wind.speed)} <span>km/h </span> 
-                        {handleDirection(cities[0].wind.deg)}
+                    <div className='city-wind-description'><small>Wind</small> {Math.round(city.wind.speed)} <span>km/h </span> 
+                        {handleDirection(city.wind.deg)}
                     </div>
-                    <div className='city-pressure'><small>Pressure</small> {cities[0].main.pressure} <span>hPa</span>
+                    <div className='city-pressure'><small>Pressure</small> {city.main.pressure} <span>hPa</span>
                     </div>
-                    <div className='city-humidity'><small>Humidity</small> {cities[0].main.humidity} <span>%</span>
+                    <div className='city-humidity'><small>Humidity</small> {city.main.humidity} <span>%</span>
                     </div>
                 </div>
                 <div className='sunrise-sunset'>
-                    <div className='city-sunrise'><small>Sunrise</small> {handleTime((cities[0].sys.sunrise),(cities[0].timezone))}</div>
-                    <div className='city-sunset'><small>Sunset</small> {handleTime((cities[0].sys.sunset),(cities[0].timezone))}</div>
+                    <div className='city-sunrise'><small>Sunrise</small> {handleTime((city.sys.sunrise),(city.timezone))}</div>
+                    <div className='city-sunset'><small>Sunset</small> {handleTime((city.sys.sunset),(city.timezone))}</div>
                 </div>
             </div>
         </div>
-    )
+        )
+    }
+    
 }
 
 export default CityBox
