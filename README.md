@@ -29,5 +29,5 @@ Requirements List:
 
 App will be uploaded to Netlify so everyone can use and see it whenever it wants.
 
-###`npm start` 
+### `npm start` 
 after dowloading this project in VSCode will run the app at the localhost. 
