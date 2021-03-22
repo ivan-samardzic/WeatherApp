@@ -1,16 +1,16 @@
 import './WeatherBox.scss'
-import React from 'react'
+import React, {useState, useEffect, useContext} from 'react'
 import CityBox from '../CityBox/CityBox'
 import ListBox from '../ListBox/ListBox'
 
-const WeatherBox = ({cities}) => {
+const WeatherBox = () => {
     return (
         <div className='weather-box'>
             <div>
-                <CityBox cities={cities} />
+                <CityBox />
             </div>
             <div>
-                <ListBox cities={cities} />
+                <ListBox />
             </div>
         </div>
     )

@@ -4,5 +4,6 @@ $fakeGrey : rgba(125,125,125,0.75);
 .weather-box {
     display: flex;
     flex-direction: row;
-    margin: 40px;
+    justify-content: center;
+    margin: 40px auto;
 }
