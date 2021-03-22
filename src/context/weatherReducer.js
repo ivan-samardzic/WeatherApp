@@ -1,5 +1,7 @@
 export const ADD_CITY = 'ADD_CITY';
 export const DELETE_CITY = 'DELETE_CITY';
+export const ADD_CITY_TO_URL = 'ADD_CITY_TO_URL';
+export const SET_CURRENT_CITY = 'SET_CURRENT_CITY';
 
 export const weatherReducer = (state, action) => {
     switch (action.type) {
@@ -7,6 +9,10 @@ export const weatherReducer = (state, action) => {
         return;
       case DELETE_CITY:
         return;
+      case ADD_CITY_TO_URL:
+      return;
+      case SET_CURRENT_CITY:
+      return;
       default:
         return state;
     }
