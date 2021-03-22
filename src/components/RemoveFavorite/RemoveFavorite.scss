@@ -1,0 +1,17 @@
+.remove-favorite {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    background: none;
+    i {
+        color: white;
+        font-size: 20px;
+        transition: transform 0.5s;
+        &:hover {
+            color: crimson;
+            cursor: pointer;
+            transform: scale(1.05);
+        }
+    }
+}

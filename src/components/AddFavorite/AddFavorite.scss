@@ -1,0 +1,20 @@
+.add-favorite {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    background: none;
+    height: 4vh;
+    i {
+        color: white;
+        font-size: 30px;
+        transition: all 0.5s;
+        margin: 30px auto;
+        &:hover {
+            color: crimson;
+            cursor: pointer;
+            transform: scale(1.5);
+        }
+    }
+}
