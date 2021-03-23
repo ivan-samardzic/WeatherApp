@@ -1,0 +1,17 @@
+$orange : rgba(230, 140, 30, 1);
+$fakeGrey : rgba(125,125,125,0.75);
+.sidebar-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .sidebar-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(0, 0,0,1);
+        padding: 25px 15px;
+        border-radius: 20px;
+        box-shadow: 5px 5px rgba(250,250,250,0.5);
+    }
+}
