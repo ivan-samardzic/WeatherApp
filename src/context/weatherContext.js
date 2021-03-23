@@ -9,5 +9,7 @@ export default React.createContext({
     deleteCity: deletedCity => {},
     addCityNameToUrl: name => {},
     loading: false,
-    setCurrentCity: clickedCity => {}
+    setCurrentCity: clickedCity => {},
+    sidebarOpen: false,
+    setSidebarOpen: sidebarOpen => {},
 })

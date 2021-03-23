@@ -10,6 +10,7 @@ const WeatherState = props => {
     const [city, setCity] = useState({})
     const [cities, setCities] = useState([])
     const [favorites, setFavorites] = useState([])
+    const [sidebarOpen, setSidebarOpen] = useState(false)
 
     useEffect(() => {
         const API_KEY = 'd10c65b95175a57139959df263291a04';
@@ -32,6 +33,9 @@ const WeatherState = props => {
 
     const addCityNameToUrl = (name) => {
         setCityName(name);
+        setTimeout(() => {
+            setSidebarOpen(false)
+        }, 50);
     }
 
     const addCity = (city) => {
@@ -49,7 +53,8 @@ const WeatherState = props => {
     const setCurrentCity = (clickedCity) => { 
         setTimeout(() => {
             setCity(clickedCity);
-        }, 150);
+            setSidebarOpen(false)
+        }, 100);
     };
 
     return(
@@ -64,6 +69,8 @@ const WeatherState = props => {
             cityName: cityName,
             loading: loading,
             setCurrentCity: setCurrentCity,
+            sidebarOpen: sidebarOpen, 
+            setSidebarOpen: setSidebarOpen,
         }}>
             {props.children}
         </WeatherContext.Provider>
