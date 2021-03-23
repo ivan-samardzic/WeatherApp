@@ -6,11 +6,13 @@ import SocialMediaBox from '../SocialMediaBox/SocialMediaBox'
 
 const Footer = () => {
     return (
-        <div className='footer-box'>
-            <LogoBox />
+        <footer>
+            <div className='footer-logo'>
+                <LogoBox />
+            </div>
             <CopyrightBox />
             <SocialMediaBox />
-        </div>
+        </footer>
     )
 }
 
