@@ -7,9 +7,57 @@
 
 .container-fluid {
   background-color: #eee;
+  backdrop-filter: blur(10px);
   margin: 0;
   padding: 0;
   position: relative;
   min-height: 100vh;
+}
+
+.sidebar {
+  display: none;
+}  
+@media screen and(max-width: 1300px) {
+  .sidebar {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top:10%;
+    right: 0%;
+    width: 380px;
+    padding: 10px;
+  }
+}
+
+@media screen and(max-width: 750px) {
+  .container-fluid {
+    background-color: #eee;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    min-height: 0;
+  }  
+}
+
+@media screen and(max-width: 650px) {
+  .sidebar {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+  } 
+}
+
+@media screen and(max-width: 450px) {
+  .sidebar {
+    position: absolute;
+    top: 8%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 410px;
+  } 
 }
 
