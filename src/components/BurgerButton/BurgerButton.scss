@@ -1,0 +1,32 @@
+$orange : rgba(230, 140, 30, 1);
+$fakeGrey : rgba(125,125,125,0.75);
+.hamburger {
+    display: flex;
+    margin: auto 20px;
+    margin-left: 400px;
+    cursor: pointer;
+    i {
+        font-size: 32px;
+        color: $orange;
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    .hamburger {
+        display: none;
+        i {
+            color: $orange;
+            font-size: 32px;
+        }
+    }
+}
+
+@media screen and(max-width: 650px) {
+    .hamburger {
+        position: absolute;
+        right: 5%;
+        i{
+            font-size: 40px;
+        }
+    }
+}
