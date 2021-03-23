@@ -5,7 +5,7 @@ import LogoBox from '../LogoBox/LogoBox'
 
 const HeaderLogo = () => {
     return (
-        <div className='d-flex flex-row justify-content-center align-items-center'>
+        <div className='d-flex flex-row justify-content-center align-items-center header-logo'>
             <CirclesBox />
             <LogoBox />
         </div>
