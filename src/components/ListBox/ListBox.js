@@ -14,10 +14,10 @@ const ListBox = () => {
                 favorites.map((favorite, index) => 
                 <div className="list-item m-3">
                     <div className="list-item-name" onClick={() => setCurrentCity(favorite)}>
-                        {favorite.name}
+                        {favorite.city.name}
                     </div>
                     <div className="list-item-temp">
-                        {Math.round(favorite.main.temp)}<span>&deg;C</span>
+                    {Math.round(favorite.list[0].main.temp)}<span>&deg;C</span>
                     </div>
                     <div onClick={() => deleteCity(favorite)}>
                         <RemoveFavorite />
