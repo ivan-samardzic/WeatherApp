@@ -7,3 +7,12 @@ $fakeGrey : rgba(125,125,125,0.75);
     justify-content: center;
     margin: 40px auto;
 }
+
+@media screen and(max-width:1300px) {
+    .weather-box {
+        display: flex;
+        .lists-box {
+            display: none;
+        }
+    }
+}

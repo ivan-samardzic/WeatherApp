@@ -9,7 +9,7 @@ const WeatherBox = () => {
             <div>
                 <CityBox />
             </div>
-            <div>
+            <div className='lists-box'>
                 <ListBox />
             </div>
         </div>
