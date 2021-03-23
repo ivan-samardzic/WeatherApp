@@ -2,11 +2,15 @@ import './Header.scss'
 import React, {useState, useContext} from 'react'
 import HeaderLogo from '../HeaderLogo/HeaderLogo'
 import SearchBox from '../SearchBox/SearchBox'
-const Header = () => {
+import BurgerButton from '../BurgerButton/BurgerButton'
+const Header = ({size,sidebarOpen, onAdd}) => {
     return (
-        <div className='header-box'>
+        <div className='header'>
             <HeaderLogo />
-            <SearchBox />
+            <div className='center-header-box'>
+                <SearchBox />
+            </div>
+            <BurgerButton onAdd={onAdd} sidebarOpen={sidebarOpen} />
         </div>
     )
 }
