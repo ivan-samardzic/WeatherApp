@@ -15,11 +15,12 @@ const WeatherState = props => {
         const API_KEY = 'd10c65b95175a57139959df263291a04';
         setLoading(true)
         const searchCityWeather = async(cityName) => {
-            const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=d10c65b95175a57139959df263291a04&units=metric`;
+            const url = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${API_KEY}&units=metric&cnt=27`;
             const response = await axios.get(url);
             const responseJSON = await response.data;
 
             if (responseJSON) {
+                console.log(responseJSON)
                 setCity(responseJSON);
                 setCities([...cities, responseJSON]);
                 setLoading(false)
