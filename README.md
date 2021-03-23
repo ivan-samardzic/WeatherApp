@@ -24,6 +24,7 @@ Requirements List:
 2. App must contain the component that will store user favorite cities.
 3. User must have an option to delete and add cities in the favorites whenever wants to.
 4. By clicking at the favorite city item name, the data about that city must be rendered in the component which shows current weather.
+5. App must render city current weather and forecast for next three days.
 
 ### Deployment
 
