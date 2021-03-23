@@ -4,18 +4,23 @@ import InfoBox from '../../components/InfoBox/InfoBox'
 import WeatherBox from '../../components/WeatherBox/WeatherBox'
 import Footer from '../../components/Footer/Footer'
 import WeatherContext from '../../context/weatherContext'
+import Sidebar from '../../components/Sidebar/Sidebar'
 import '../../App.scss'
 
 const Home = () => {
     const context = useContext(WeatherContext);
-    const {cities} = context;
+    const {cities, sidebarOpen, setSidebarOpen} = context;
     return (
         <div className='container-fluid'>
-          <Header />
+          <Header onAdd={() => setSidebarOpen(!sidebarOpen)} sidebarOpen={sidebarOpen}/>
           <div className='main-view'>
             {cities.length === 0 ? <InfoBox />  : <WeatherBox />}
           </div>
           <Footer />
+
+          <div className='sidebar' >
+              <Sidebar sidebarOpen={sidebarOpen}/>
+          </div>
         </div>
     )
 }
