@@ -9,15 +9,14 @@ $fakeGrey : rgba(125,125,125,0.75);
         display: flex;
         flex-direction: column;
         margin: 20px auto;
-        margin-right: 20px;
         padding: 15px;
         background-color: #252525;
         border-radius: 20px;
         position: relative;
         .favorite-box {
             position: absolute;
-            top: 10%;
-            left: 45%;
+            top: 5%;
+            left: 50%;
         }
         small {
             color: $orange;
@@ -110,5 +109,119 @@ $fakeGrey : rgba(125,125,125,0.75);
         border-radius: 20px;
         margin-right: 10px;
         padding: 10px;
+    }
+}
+
+@media screen and(max-width:650px) {
+    .main-box {
+        display: flex;
+        flex-direction: column;
+        .city-box {
+            width: 400px;
+            .favorite-box {
+                position: absolute;
+                top: 0%;
+                right: -20%;
+            }
+            .first-row {
+                flex-direction: column;
+                .left-corner {
+                    margin: 0;
+                    .city-name {
+                        color: $orange;
+                        font-size: 48px;
+                    }
+                    .city-temp {
+                        font-size: 24px;
+                        color: white;
+                    }
+                }
+                .right-corner {
+                    margin: 0;
+                    margin-top: 10px;
+                    .city-image {
+                        width: 120px;
+                        margin: 10px auto;
+                    }
+                }
+            }
+            .second-row {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                .city-temp-min-max {
+                    display: flex;
+                    flex-direction: column;
+                    margin: 0px;
+                    .min-temp, .max-temp {
+                        width: 60px;
+                    }
+                }
+                .pressure-humidity-wind {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    .city-wind-description, .city-pressure, .city-humidity {
+                        color: white;
+                        font-weight: 600;
+                        width: 140px;
+                        margin: 0px -25px;
+                    }
+                }
+                .sunrise-sunset {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin: 0px;
+                    .city-sunrise, .city-sunset {
+                        color: white;
+                        font-weight: 600;
+                        width: 140px;
+                        margin: 0px -40px;
+                    }
+                }
+            }
+        }
+        .forecast-box {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+}
+
+@media screen and(max-width:470px) {
+    .main-box {
+        display: flex;
+        flex-direction: column;
+        .city-box {
+            width: 340px;
+            .second-row {
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+                grid-gap: 20px;
+                .city-temp-min-max {
+                    display: flex;
+                    flex-direction: column;
+                    margin: auto;
+                    .min-temp, .max-temp {
+                        width: auto;
+                    }
+                }
+                .pressure-humidity-wind {
+                    .city-wind-description, .city-pressure, .city-humidity {
+                        width: auto;
+                        margin: auto;
+                    }
+                }
+                .sunrise-sunset {
+                    margin: auto;
+                    .city-sunrise, .city-sunset {
+                        width: auto;
+                        margin: auto;
+                    }
+                }
+            }
+        }
+        .forecast-box {
+            grid-template-columns: repeat(1, 1fr);
+        }
     }
 }
