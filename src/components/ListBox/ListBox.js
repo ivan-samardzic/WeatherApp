@@ -24,7 +24,7 @@ const ListBox = () => {
                     </div>
                 </div>
                 ) :
-                <p style={{color : "white", fontSize : "16px"}}>No Cities In Favorites List</p>
+                <p style={{color : "grey", fontSize : "16px"}}>No Cities In Favorites List</p>
                 }
         </div>
     )

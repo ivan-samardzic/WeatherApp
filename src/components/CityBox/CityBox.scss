@@ -8,7 +8,7 @@ $fakeGrey : rgba(125,125,125,0.75);
     .city-box {
         display: flex;
         flex-direction: column;
-        margin: 20px auto;
+        margin: 20px 0px;
         padding: 15px;
         background-color: #252525;
         border-radius: 20px;
@@ -112,7 +112,9 @@ $fakeGrey : rgba(125,125,125,0.75);
     }
 }
 
-@media screen and(max-width:650px) {
+
+
+@media screen and(max-width:700px) {
     .main-box {
         display: flex;
         flex-direction: column;
@@ -121,24 +123,21 @@ $fakeGrey : rgba(125,125,125,0.75);
             .favorite-box {
                 position: absolute;
                 top: 0%;
-                right: -20%;
+                right: -10%;
             }
             .first-row {
                 flex-direction: column;
                 .left-corner {
                     margin: 0;
                     .city-name {
-                        color: $orange;
-                        font-size: 48px;
+                        font-size: 40px;
                     }
                     .city-temp {
                         font-size: 24px;
-                        color: white;
                     }
                 }
                 .right-corner {
                     margin: 0;
-                    margin-top: 10px;
                     .city-image {
                         width: 120px;
                         margin: 10px auto;
@@ -152,8 +151,10 @@ $fakeGrey : rgba(125,125,125,0.75);
                     display: flex;
                     flex-direction: column;
                     margin: 0px;
+                    margin-left: 5px;
+                    margin-right: -20px;
                     .min-temp, .max-temp {
-                        width: 60px;
+                        width: 80px;
                     }
                 }
                 .pressure-humidity-wind {
@@ -164,7 +165,7 @@ $fakeGrey : rgba(125,125,125,0.75);
                         color: white;
                         font-weight: 600;
                         width: 140px;
-                        margin: 0px -25px;
+                        margin: 0px -35px;
                     }
                 }
                 .sunrise-sunset {
@@ -187,12 +188,12 @@ $fakeGrey : rgba(125,125,125,0.75);
     }
 }
 
-@media screen and(max-width:470px) {
+@media screen and(max-width:495px) {
     .main-box {
         display: flex;
         flex-direction: column;
         .city-box {
-            width: 340px;
+            width: 330px;
             .second-row {
                 display: grid;
                 grid-template-columns: repeat(1, 1fr);

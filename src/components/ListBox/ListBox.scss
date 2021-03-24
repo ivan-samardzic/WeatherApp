@@ -3,12 +3,15 @@ $fakeGrey : rgba(125,125,125,0.75);
 .list-box {
     width: 300px;
     margin: 20px auto;
+    margin-left: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #141414;
     border-radius: 20px;
-    min-height: 430px;
+    min-height: 240px;
+    max-height: 435px;
+    overflow-y: scroll;
     .list-box-name {
         color: $orange;
         margin-top: 10px;
@@ -41,4 +44,12 @@ $fakeGrey : rgba(125,125,125,0.75);
             font-size: 16px;
           }
       }
+}
+
+@media screen and(max-width:1100px) {
+    footer {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
 }

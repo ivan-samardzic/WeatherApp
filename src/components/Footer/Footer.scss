@@ -19,6 +19,9 @@ footer {
     footer {
         display: flex;
         flex-direction: column;
+        position: relative;
+        padding-bottom: 50px;
+        width: auto;
     }
 }
 
@@ -27,6 +30,7 @@ footer {
         display: flex;
         flex-direction: column;
         position: relative;
+        width: auto;
     }
 }
 
