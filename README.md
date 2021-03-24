@@ -16,7 +16,7 @@ App is using:
 2. Context API
 3. SCSS, GoogleFonts, FontAwesome and Bootstrap
 4. Git and Postman
-5. Responsive Web (in progress)
+5. Responsive Web
 
 Requirements List:
 
