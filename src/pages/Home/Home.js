@@ -11,18 +11,18 @@ const Home = () => {
     const context = useContext(WeatherContext);
     const {cities, sidebarOpen, setSidebarOpen} = context;
     return (
-        <div className='container-fluid'>
-          <Header onAdd={() => setSidebarOpen(!sidebarOpen)} sidebarOpen={sidebarOpen}/>
+        <div className='container-fluid' >
+          <Header onAdd={() => setSidebarOpen(!sidebarOpen)} sidebarOpen={sidebarOpen} />
           <div className='main-view'>
             {cities.length === 0 ? <InfoBox />  : <WeatherBox />}
           </div>
-          <Footer />
-
           <div className='sidebar' >
-              <Sidebar sidebarOpen={sidebarOpen}/>
+              <Sidebar sidebarOpen={sidebarOpen} onAdd={() => setSidebarOpen(!sidebarOpen)}/>
           </div>
+          <Footer />
         </div>
     )
 }
 
 export default Home
+
