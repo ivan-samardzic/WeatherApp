@@ -10,7 +10,7 @@ $fakeGrey : rgba(125,125,125,0.75);
         flex-direction: column;
         margin: 20px 0px;
         padding: 15px;
-        background-color: #252525;
+        background-color: #393939;
         border-radius: 20px;
         position: relative;
         .favorite-box {
@@ -25,6 +25,7 @@ $fakeGrey : rgba(125,125,125,0.75);
             font-weight: 100;
             margin: 0px 2px;
             color: #aaa;
+            font-size: 12px;
         }
         .first-row {
             display: flex;
@@ -193,11 +194,30 @@ $fakeGrey : rgba(125,125,125,0.75);
         display: flex;
         flex-direction: column;
         .city-box {
-            width: 330px;
+            width: 260px;
+            .first-row {
+                .left-corner {
+                    margin: 0;
+                    .city-name {
+                        font-size: 24px;
+                    }
+                    .city-temp {
+                        font-size: 18px;
+                    }
+                }
+                .right-corner {
+                    margin: 0;
+                    .city-image {
+                        width: 60px;
+                        height: 60px;
+                        margin: 5px auto;
+                    }
+                }
+            }
             .second-row {
                 display: grid;
                 grid-template-columns: repeat(1, 1fr);
-                grid-gap: 20px;
+                grid-gap: 10px;
                 .city-temp-min-max {
                     display: flex;
                     flex-direction: column;
