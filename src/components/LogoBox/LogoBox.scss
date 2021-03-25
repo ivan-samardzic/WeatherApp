@@ -16,3 +16,21 @@ $fakeGrey : rgba(125,125,125,0.75);
         font-size: 18px;
     }
 }
+
+@media screen and(max-width: 475px) {
+    .logo-box {
+        display: flex;
+        cursor: pointer;
+        h3 {
+            color: $orange;
+            font-size: 18.5px;
+            margin: 0px auto;
+            text-align: left;
+        }
+        h4 {
+            color: $fakeGrey;
+            font-size: 14px;
+        }
+    }
+  }
+  
