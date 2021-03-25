@@ -16,7 +16,7 @@ const Home = () => {
           <div className='main-view'>
             {cities.length === 0 ? <InfoBox />  : <WeatherBox />}
           </div>
-          <div className='sidebar' >
+          <div className='sidebar' style={sidebarOpen ? sidebarStyleActive : sidebarStyleUnactive} >
               <Sidebar sidebarOpen={sidebarOpen} onAdd={() => setSidebarOpen(!sidebarOpen)}/>
           </div>
           <Footer />
@@ -24,5 +24,24 @@ const Home = () => {
     )
 }
 
+
+const sidebarStyleActive= {
+  'position': 'fixed',
+  'width': '100%',
+  'height': '100%',
+  'top': '0',
+  'left': '0',
+  'backdrop-filter': 'blur(10px)',
+}
+
+const sidebarStyleUnactive= {
+  'position': 'fixed',
+  'width': '0%',
+  'height': '0%',
+  'top': '0',
+  'left': '0',
+  'backdrop-filter': 'none',
+  'display': 'none'
+}
 export default Home
 
