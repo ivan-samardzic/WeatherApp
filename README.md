@@ -28,7 +28,9 @@ Requirements List:
 
 ### Deployment
 
-App will be uploaded to Netlify so everyone can use and see it whenever it wants.
+App will be uploaded to Netlify so everyone can use and see it whenever it wants. You can check out my app in this link:
+
+### `https://ivan-samardzic-weather-app.netlify.app/`
 
 ### `npm start` 
 after dowloading this project in VSCode will run the app at the localhost. 
