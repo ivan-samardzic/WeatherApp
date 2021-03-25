@@ -40,6 +40,40 @@ const CityBox = () => {
         return formattedTime;
     }
 
+    const handleDay = (dayOffset) => {
+        let date = new Date();
+        let day = date.getDay();
+        day += dayOffset;
+        let today = '';
+        switch (day % 7) {
+          case 0:
+            today = 'Sunday';
+            break;
+          case 1:
+            today = 'Monday';
+            break;
+          case 2:
+            today = 'Tuesday';
+            break;
+          case 3:
+            today = 'Wednesday';
+            break;
+          case 4:
+            today = 'Thursday';
+            break;
+          case 5:
+            today = 'Friday';
+            break;
+          case 6:
+            today = 'Saturday';
+            break;
+          default:
+            today = '';
+        }
+    
+        return today;
+    }
+
     if(loading) {
         return <Spinner />
     }
@@ -82,9 +116,9 @@ const CityBox = () => {
                 </div>
             </div>
             <div className='forecast-box'>
-                <ForecastBox city={city} dayOffset='1' timeOffset='8' />
-                <ForecastBox city={city} dayOffset='2' timeOffset='17' />
-                <ForecastBox city={city} dayOffset='3' timeOffset='25' />
+                <ForecastBox city={city} dayName={handleDay(1)} timeOffset='8' />
+                <ForecastBox city={city} dayName={handleDay(2)} timeOffset='17' />
+                <ForecastBox city={city} dayName={handleDay(3)} timeOffset='25' />
             </div>
         </div>
         )
