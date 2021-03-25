@@ -68,6 +68,10 @@ $fakeGrey : rgba(125,125,125,0.75);
 @media screen and(max-width:475px) {
     .message-box {
         display: flex;
+        img {
+            width: 110px;
+            margin-bottom: 10px;
+        }
         h3 {
             font-size: 16px;
         }
