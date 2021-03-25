@@ -32,6 +32,7 @@ const sidebarStyleActive= {
   'top': '0',
   'left': '0',
   'backdrop-filter': 'blur(10px)',
+  'z-index': '99'
 }
 
 const sidebarStyleUnactive= {
@@ -41,7 +42,8 @@ const sidebarStyleUnactive= {
   'top': '0',
   'left': '0',
   'backdrop-filter': 'none',
-  'display': 'none'
+  'display': 'none',
+  'z-index': '99'
 }
 export default Home
 
