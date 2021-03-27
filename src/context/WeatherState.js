@@ -16,7 +16,7 @@ const WeatherState = props => {
         const API_KEY = 'd10c65b95175a57139959df263291a04';
         setLoading(true)
         const searchCityWeather = async(cityName) => {
-            const url = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${API_KEY}&units=metric&cnt=27`;
+            const url = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${API_KEY}&units=metric&cnt=32`;
             const response = await axios.get(url);
             const responseJSON = await response.data;
 
@@ -45,7 +45,7 @@ const WeatherState = props => {
 
     const deleteCity = (deleteCity) => {
         const newFavoriteList = favorites.filter((favorite) => 
-        favorite.id !== deleteCity.id
+        favorite.city.id !== deleteCity.city.id
         );
         setFavorites(newFavoriteList);
     }
