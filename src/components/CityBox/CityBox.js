@@ -31,12 +31,40 @@ const CityBox = () => {
         return stringDir;
     }
 
-    const handleTime = (time, timezone) => {
+    const handleSunriseTime = (time, timezone) => {
+        console.log(time, timezone)
         let zone = timezone / 3600;
         let date = new Date(time * 1000);
         let hours = date.getHours();
+        if (zone <= 5 && zone >= -5) {
+            hours += zone;
+        } else if((zone >= -12 && zone < -5) || (zone > 5 && zone <= 12)) {
+            hours = (hours + zone) % 24;
+        }
         let minutes = "0" + date.getMinutes();
-        let formattedTime = (hours + zone) + ':' + minutes.substr(-2);
+        let formattedTime = (hours) + ':' + minutes.substr(-2);
+        return formattedTime;
+    }
+    
+    const handleSunsetTime = (time, timezone) => {
+        console.log(time, timezone)
+        let zone = timezone / 3600;
+        console.log("Zone",zone)
+        let date = new Date(time * 1000);
+        console.log("Date",date)
+        let hours = date.getHours();
+        console.log("Hour",hours)
+        if (zone <= 5 && zone >= -5) {
+            hours = hours + zone;
+        } else if((zone >= -12 && zone < -5) || (zone > 5 && zone <= 12)) {
+            hours = (hours + zone);
+        }
+        if (hours >= -4 && hours <= 4) {
+            hours = 24 + hours;
+        }
+        let minutes = "0" + date.getMinutes();
+        let formattedTime = (hours) + ':' + minutes.substr(-2);
+        console.log("Formatted time",formattedTime)
         return formattedTime;
     }
 
@@ -97,8 +125,8 @@ const CityBox = () => {
                 </div>
                 <div className='second-row'>
                     <div className='city-temp-min-max'>
-                        <div className='min-temp'><small>Min</small> {Math.round(city.list[0].main.temp_min)}<span>&deg;C</span></div>
                         <div className='max-temp'><small>Max</small> {Math.round(city.list[0].main.temp_max)}<span>&deg;C</span></div>
+                        <div className='min-temp'><small>Min</small> {Math.round(city.list[0].main.temp_min)}<span>&deg;C</span></div>
                     </div>
                     <div className='pressure-humidity-wind'>
                         <div className='city-wind-description'><small>Wind</small> {city.list[0].wind.speed} <span>km/h </span> 
@@ -110,8 +138,8 @@ const CityBox = () => {
                         </div>
                     </div>
                     <div className='sunrise-sunset'>
-                        <div className='city-sunrise'><small>Sunrise</small> {handleTime((city.city.sunrise),(city.city.timezone))}</div>
-                        <div className='city-sunset'><small>Sunset</small> {handleTime((city.city.sunset),(city.city.timezone))}</div>
+                        <div className='city-sunrise'><small>Sunrise</small> {handleSunriseTime((city.city.sunrise),(city.city.timezone))}</div>
+                        <div className='city-sunset'><small>Sunset</small> {handleSunsetTime((city.city.sunset),(city.city.timezone))}</div>
                     </div>
                 </div>
             </div>
