@@ -33,14 +33,9 @@ const CityBox = () => {
 
     const handleSunriseTime = (time, timezone) => {
         console.log(time, timezone)
-        let zone = timezone / 3600;
+        let zone = (timezone - 7200) / 3600;
         let date = new Date(time * 1000);
-        let hours = date.getHours();
-        if (zone <= 5 && zone >= -5) {
-            hours += zone;
-        } else if((zone >= -12 && zone < -5) || (zone > 5 && zone <= 12)) {
-            hours = (hours + zone) % 24;
-        }
+        let hours = date.getHours() + zone;
         let minutes = "0" + date.getMinutes();
         let formattedTime = (hours) + ':' + minutes.substr(-2);
         return formattedTime;
@@ -54,14 +49,6 @@ const CityBox = () => {
         console.log("Date",date)
         let hours = date.getHours();
         console.log("Hour",hours)
-        if (zone <= 5 && zone >= -5) {
-            hours = hours + zone;
-        } else if((zone >= -12 && zone < -5) || (zone > 5 && zone <= 12)) {
-            hours = (hours + zone);
-        }
-        if (hours >= -4 && hours <= 4) {
-            hours = 24 + hours;
-        }
         let minutes = "0" + date.getMinutes();
         let formattedTime = (hours) + ':' + minutes.substr(-2);
         console.log("Formatted time",formattedTime)
