@@ -39,8 +39,14 @@ const WeatherState = props => {
     }
 
     const addCity = (city) => {
-        const newFavoritesList = [...favorites, city];
-        setFavorites(newFavoritesList);
+        const updatedCityIndex = favorites.findIndex(favorite => favorite.city.id === city.city.id);
+        if (updatedCityIndex < 0) {
+            const newFavoritesList = [...favorites, city];
+            setFavorites(newFavoritesList);
+        }
+        else {
+            console.log('City is already in favorites list');
+        }
     }
 
     const deleteCity = (deleteCity) => {
