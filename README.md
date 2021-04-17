@@ -10,6 +10,8 @@ the data inside context and started to fetch it using axios HTTP GET method by u
 introduced to show the users data buffering (screen can't be without content while fetching data from api).React Router Dom was also
 introduced using npm to allow us to free the main component.
 
+![screenshot](https://github.com/ivan-samardzic/WeatherApp/blob/master/image.png)
+
 App is using:
 
 1. React (React Router, React Hooks, React JSX, React Link, React Props, React Stats and more)
